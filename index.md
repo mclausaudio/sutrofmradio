@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/mclausaudio/sutrofmradio/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<link rel="stylesheet" href="//www.radiojar.com/wrappers/api-plugins/v1/css/player.css">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mclausaudio/sutrofmradio/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<div id="rj-player">
+ <div class="rjp-player-container">
+  <div id="rjp-radiojar-player"></div>
+  <div id="rj-player-controls" class="rj-player-controls">
+   <div class="jp-gui jp-interface">
+    <div class="jp-controls">
+     <a href="javascript:;" style="display:block" class="jp-play" title="Play">&nbsp;<i class="icon-play"></i></a>
+     <a href="javascript:;" style="display:none" class="jp-pause" title="Pause" ><i class="icon-pause"></i></a>
+     <a href="javascript:;" class="jp-mute"  style="display:block" title="Mute"><i class="icon-volume-up"></i></a>
+     <a href="javascript:;" class="jp-unmute" style="display:none" title="Unmute"><i class="icon-volume-off"></i></a>
+    </div>
+   </div>
+   <div class="jp-no-solution">
+    <span>Update Required</span>
+    To play the media you will need to either update your browser to a recent version or update your <a href="//get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+   </div>
+  </div>
+ </div>
+</div>
