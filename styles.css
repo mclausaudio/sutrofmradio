@@ -3,6 +3,13 @@ h1 {
 }
 
 
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+
+
 body {
   background-color: blue;
 }
