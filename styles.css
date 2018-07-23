@@ -3,7 +3,6 @@
   margin: auto;
 }
 
-body {
-  background-color: blue;
+* {
   font-family: 'Space Mono', monospace;
 }
