@@ -7,6 +7,19 @@
   padding:2rem 0 2rem 0;
 }
 
+.nav-link {
+  padding:1rem;
+}
+
+.nav {
+  display:flex;
+}
+
+.nav-ul {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 * {
   font-family: 'Space Mono', monospace;
 }
