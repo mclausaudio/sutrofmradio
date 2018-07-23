@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>title</title>
+  <title>SutroFM</title>
   <link rel="stylesheet" href="styles.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </link>
@@ -42,8 +42,7 @@
     </div>
     <div class="row">
       <div>
-        <iframe src="//chat.radiojar.com/sutro-fm/" width="100%" height="400px" scrolling="no" frameborder="0"></iframe>
-        <div>
+        <div id="rjp-chat">
         </div>
       </div>
     </div>
@@ -51,6 +50,17 @@
   <!--  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
+<script>
+   rjq('#rjp-chat').radiojar('chatProvider', {
+       streamname: "sdak4d2ptceuv",
+       width: 600,              // width of chat container in pixels (default is 700 pixels)
+       height:300,              // height of chat container in pixels (default is 900 pixels)
+       frameborder:false,       // show frameborder or not (default is false)
+       scrolling:"auto",        // yes, no, auto (default is no)
+       cssfile:""               // your own custom css file url
+   });
+</script>
 </body>
 
 </html>
