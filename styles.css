@@ -1,15 +1,9 @@
-h1 {
-  font-family: 'Space Mono', monospace;
-}
-
-
 .container {
-  max-width: 500px;
+  max-width: 1000px;
   margin: auto;
 }
 
-
-
 body {
   background-color: blue;
+    font-family: 'Space Mono', monospace;
 }
