@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>title</title>
   <link rel="stylesheet" href="styles.css" type="text/css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</link>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </link>
   <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet"></link>
   <link rel="stylesheet" href="//www.radiojar.com/wrappers/api-plugins/v1/css/player.css"></link>
 </head>
@@ -14,13 +14,13 @@
 <body>
 
   <div class="container text-center">
-      <h1 class="text-center">SutroFM</h1>
-      <div class="border text-center">
-        <h6>Beta v 0.0.9 - Jul 2018</h6>
-        <p>Questions? Interested in hosting a show? <a href="mailto:mclausaudio@gmail.com?subject=SutroFM - admin">Contact us</a>.
-      </div>
+    <h1 class="text-center">SutroFM</h1>
+    <div class="border text-center">
+      <h6>Beta v 0.0.9 - Jul 2018</h6>
+      <p>Questions? Interested in hosting a show? <a href="mailto:mclausaudio@gmail.com?subject=SutroFM - admin">Contact us</a>.
+    </div>
     <div class="row">
-      <div>
+      <!-- <div>
         <div id="rj-player">
           <div class="player-v3 player-medium">
             <div id="rj-cover">
@@ -55,62 +55,63 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div>
-<p>MP3 Stream: <a href="http://stream.radiojar.com/sdak4d2ptceuv">http://stream.radiojar.com/sdak4d2ptceuv</a></p>
+        <p>Listen to stream: <a href="http://stream.radiojar.com/sdak4d2ptceuv" target="_blank">http://stream.radiojar.com/sdak4d2ptceuv</a></p>
       </div>
     </div>
     <div class="row">
       <div>
-<iframe src="//chat.radiojar.com/sutro-fm/" width="100%" height="400px" scrolling="no" frameborder="0"></iframe>
-<div>
+        <iframe src="//chat.radiojar.com/sutro-fm/" width="100%" height="400px" scrolling="no" frameborder="0"></iframe>
+        <div>
 
-</div>
+        </div>
       </div>
     </div>
   </div>
-<!--  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" src="//www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
   <script>
-   rjq('#rjp-radiojar-player').radiojar('player', {
-    "streamName": "sdak4d2ptceuv",
-    "enableUpdates": true,
-    "defaultImage": "//www.radiojar.com/img/sample_images/Radio_Stations_Avatar_BLUE.png",
-    "autoplay":false
-   });
-   rjq('#rjp-radiojar-player').off('rj-track-load-event');
-   rjq('#rjp-radiojar-player').on('rj-track-load-event', function(event, data) {
-     updateInfo(data);
-     if (data.title != "" || data.artist != "") {
-       rjq('.rjp-trackinfo-container').show();
-       rjq('#trackInfo').html(data.artist + ' - "' + data.title + '"')
-     } else {
-       rjq('.rjp-trackinfo-container').hide();
-     }
-   });
+    rjq('#rjp-radiojar-player').radiojar('player', {
+      "streamName": "sdak4d2ptceuv",
+      "enableUpdates": true,
+      "defaultImage": "//www.radiojar.com/img/sample_images/Radio_Stations_Avatar_BLUE.png",
+      "autoplay": false
+    });
+    rjq('#rjp-radiojar-player').off('rj-track-load-event');
+    rjq('#rjp-radiojar-player').on('rj-track-load-event', function(event, data) {
+      updateInfo(data);
+      if (data.title != "" || data.artist != "") {
+        rjq('.rjp-trackinfo-container').show();
+        rjq('#trackInfo').html(data.artist + ' - "' + data.title + '"')
+      } else {
+        rjq('.rjp-trackinfo-container').hide();
+      }
+    });
 
-   function updateInfo(data) {
-     if (data.thumb) {
-       rjq('#rj-cover').html('<a href="#"><img src="' + data.thumb + '" alt="" title="" /></a>')
-     } else {
-       rjq('#rj-cover').html('')
-     }
-   }
+    function updateInfo(data) {
+      if (data.thumb) {
+        rjq('#rj-cover').html('<a href="#"><img src="' + data.thumb + '" alt="" title="" /></a>')
+      } else {
+        rjq('#rj-cover').html('')
+      }
+    }
   </script>
   <script type="text/javascript" src="//www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
   <script>
-     rjq('#rjp-chat').radiojar('chatProvider', {
-         streamname: "sdak4d2ptceuv",
-         // width: 600,              // width of chat container in pixels (default is 700 pixels)
-         // height:300,              // height of chat container in pixels (default is 900 pixels)
-         frameborder:true,       // show frameborder or not (default is false)
-         scrolling:"auto",        // yes, no, auto (default is no)
-         cssfile:""               // your own custom css file url
-     });
+    rjq('#rjp-chat').radiojar('chatProvider', {
+      streamname: "sdak4d2ptceuv",
+      // width: 600,              // width of chat container in pixels (default is 700 pixels)
+      // height:300,              // height of chat container in pixels (default is 900 pixels)
+      frameborder: true, // show frameborder or not (default is false)
+      scrolling: "auto", // yes, no, auto (default is no)
+      cssfile: "" // your own custom css file url
+    });
   </script>
 </body>
+
 </html>
