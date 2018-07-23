@@ -12,12 +12,14 @@
 
 <body>
 
-  <div class="container">
-      <h1>SutroFM</h1>
-      <h6>Beta v 0.0.9 - Jul 2018</h6>
-      <p>Questions? Interested in hosting a show? <a href="mailto:mclausaudio@gmail.com?subject=SutroFM - admin">Contact us</a>.
+  <div class="container text-center">
+      <h1 class="text-center">SutroFM</h1>
+      <div class="border text-center">
+        <h6>Beta v 0.0.9 - Jul 2018</h6>
+        <p>Questions? Interested in hosting a show? <a href="mailto:mclausaudio@gmail.com?subject=SutroFM - admin">Contact us</a>.
+      </div>
     <div class="row">
-      <div class="col-sm-6">
+      <div>
         <div id="rj-player">
           <div class="player-v3 player-medium">
             <div id="rj-cover">
@@ -68,10 +70,10 @@
   <script type="text/javascript" src="//www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
   <script>
    rjq('#rjp-radiojar-player').radiojar('player', {
-    "streamName": "uf6x8w5f81ac",
+    "streamName": "sdak4d2ptceuv",
     "enableUpdates": true,
     "defaultImage": "//www.radiojar.com/img/sample_images/Radio_Stations_Avatar_BLUE.png",
-    "autoplay":false
+    "autoplay":true
    });
    rjq('#rjp-radiojar-player').off('rj-track-load-event');
    rjq('#rjp-radiojar-player').on('rj-track-load-event', function(event, data) {
