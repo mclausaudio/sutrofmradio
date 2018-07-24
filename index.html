@@ -38,8 +38,8 @@
         <iframe src="//www.radiojar.com/widget/radio/sdak4d2ptceuv/player/?trackinfo&show_now" frameborder="0" width="320" height="260" scrolling="no"></iframe>
       </div> -->
       <div id="rj-player">
-        <div class="player-v3 player-medium">
-          <!-- <div id="rj-cover">
+        <!-- <div class="player-v3 player-medium">
+          <div id="rj-cover">
             <a href="#"><img src=""/></a>
           </div> -->
           <div class="info">
@@ -48,7 +48,7 @@
               <p id="trackInfo" class="rjp-info"></p>
             </div>
             <div class="rjp-player-container">
-              <!-- <div id="rjp-radiojar-player"></div> -->
+              <div id="rjp-radiojar-player"></div>
               <div id="rj-player-controls" class="rj-player-controls">
                 <div class="jp-gui jp-interface">
                   <div class="jp-controls">
@@ -96,12 +96,13 @@
       cssfile: "" // your own custom css file url
     });
   </script>
+  <!-- below is the script fo the player widget, am using iFrame for now -->
   <script>
  rjq('#rjp-radiojar-player').radiojar('player', {
   "streamName": "sdak4d2ptceuv",
   "enableUpdates": true,
   "defaultImage": "https://i.imgur.com/ZtIg9fn.png",
-  "autoplay":false
+  "autoplay":true
  });
  rjq('#rjp-radiojar-player').off('rj-track-load-event');
  rjq('#rjp-radiojar-player').on('rj-track-load-event', function(event, data) {
