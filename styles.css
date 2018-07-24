@@ -9,6 +9,10 @@
   background-color:white;
 }
 
+.player-medium {
+  margin: auto !important;
+}
+
 .nav-link {
   padding:1rem;
 }
