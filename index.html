@@ -9,6 +9,7 @@
   </link>
   <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet"></link>
   <link rel="stylesheet" href="//www.radiojar.com/wrappers/api-plugins/v1/css/player.css" />
+  <link rel="stylesheet" href="//www.radiojar.com/wrappers/api-plugins/v1/css/player.css">
 </head>
 
 <body>
@@ -33,8 +34,42 @@
       <p>Questions? Interested in hosting a show? <a href="mailto:mclausaudio@gmail.com?subject=SutroFM - admin">Contact us</a>.
     </div>
     <div class="row">
-      <div>
+      <!-- <div>
         <iframe src="//www.radiojar.com/widget/radio/sdak4d2ptceuv/player/?trackinfo&show_now" frameborder="0" width="320" height="260" scrolling="no"></iframe>
+      </div> -->
+      <div id="rj-player">
+        <div class="player-v3 player-medium">
+          <div id="rj-cover">
+            <a href="#"><img src=""/></a>
+          </div>
+          <div class="info">
+            <div class="rjp-trackinfo-container">
+              <h4 class="rjp-label">Now playing:</h4>
+              <p id="trackInfo" class="rjp-info"></p>
+            </div>
+            <div class="rjp-player-container">
+              <div id="rjp-radiojar-player"></div>
+              <div id="rj-player-controls" class="rj-player-controls">
+                <div class="jp-gui jp-interface">
+                  <div class="jp-controls">
+                    <a href="javascript:;" style="display:block" class="jp-play" title="Play">&nbsp;<i class="icon-play"></i></a>
+                    <a href="javascript:;" style="display:none" class="jp-pause" title="Pause"><i class="icon-pause"></i></a>
+                    <a href="javascript:;" style="display:block" class="jp-mute" title="Mute"><i class="icon-volume-up"></i></a>
+                    <a href="javascript:;" style="display:none" class="jp-unmute" title="Unmute"><i class="icon-volume-off"></i></a>
+                    <div class="jp-volume-bar-wrapper">
+                      <div class="jp-volume-bar">
+                        <div class="jp-volume-bar-value"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="jp-no-solution">
+                <span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="//get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <p>Listen to stream: <a href="http://stream.radiojar.com/sdak4d2ptceuv" target="_blank">http://stream.radiojar.com/sdak4d2ptceuv</a></p>
@@ -51,15 +86,41 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="//www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
-<script>
-   rjq('#rjp-chat').radiojar('chatProvider', {
-       streamname: "sdak4d2ptceuv",
-       width: 600,              // width of chat container in pixels (default is 700 pixels)
-       height:300,              // height of chat container in pixels (default is 900 pixels)
-       frameborder:false,       // show frameborder or not (default is false)
-       scrolling:"auto",        // yes, no, auto (default is no)
-       cssfile:""               // your own custom css file url
-   });
+  <script>
+    rjq('#rjp-chat').radiojar('chatProvider', {
+      streamname: "sdak4d2ptceuv",
+      width: 600, // width of chat container in pixels (default is 700 pixels)
+      height: 300, // height of chat container in pixels (default is 900 pixels)
+      frameborder: false, // show frameborder or not (default is false)
+      scrolling: "auto", // yes, no, auto (default is no)
+      cssfile: "" // your own custom css file url
+    });
+  </script>
+  <script>
+ rjq('#rjp-radiojar-player').radiojar('player', {
+  "streamName": "sdak4d2ptceuv",
+  "enableUpdates": true,
+  "defaultImage": "https://i.imgur.com/ZtIg9fn.png",
+  "autoplay":false
+ });
+ rjq('#rjp-radiojar-player').off('rj-track-load-event');
+ rjq('#rjp-radiojar-player').on('rj-track-load-event', function(event, data) {
+   updateInfo(data);
+   if (data.title != "" || data.artist != "") {
+     rjq('.rjp-trackinfo-container').show();
+     rjq('#trackInfo').html(data.artist + ' - "' + data.title + '"')
+   } else {
+     rjq('.rjp-trackinfo-container').hide();
+   }
+ });
+
+ function updateInfo(data) {
+   if (data.thumb) {
+     rjq('#rj-cover').html('<a href="#"><img src="' + data.thumb + '" alt="" title="" /></a>')
+   } else {
+     rjq('#rj-cover').html('')
+   }
+ }
 </script>
 </body>
 
