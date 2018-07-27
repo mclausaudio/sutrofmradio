@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>SutroFM</title>
+  
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="../after-gulp/styles.css" type="text/css">
+  </link>
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet"></link>
+  <link rel="stylesheet" href="//www.radiojar.com/wrappers/api-plugins/v1/css/player.css" />
+  <link rel="stylesheet" href="//www.radiojar.com/wrappers/api-plugins/v1/css/player.css">
+</head>
+
+<body>
+<div class="container site-content">
+    <img src="https://i.imgur.com/cwavSww.png" class="text-center">
+      <h6>Beta v 0.0.9 - Jul 2018</h6>
+    <h1>Schedule</h1>
+          <ul  class="nav">
+          <li class="nav__link"> | </li>
+          <li class="nav__link"><a href="index.html" target="_blank">Home</a></li>
+          <li class="nav__link"> | </li>
+          <li class="nav__link"><a href="#">Show Archive</a><sup style="color: red;">Coming Soon</sup></li>
+          <li class="nav__link"> | </li>
+        </ul>
+        <p>Questions? Interested in hosting a show? <a href="mailto:mclausaudio@gmail.com?subject=SutroFM - admin">Contact us</a>.
+    <div id="rj-schedule">
+  <div id="rj-tabs">
+     <ul class="rj-nav rj-nav-tabs" id="radio_schedule">
+        <li class="active"><a href="#monday" data-toggle="tab">Monday</a></li>
+        <li><a href="#tuesday" data-toggle="tab">Tuesday</a></li>
+        <li><a href="#wednesday" data-toggle="tab">Wednesday</a></li>
+        <li><a href="#thursday" data-toggle="tab">Thursday</a></li>
+        <li><a href="#friday" data-toggle="tab">Friday</a></li>
+        <li><a href="#saturday" data-toggle="tab">Saturday</a></li>
+        <li><a href="#sunday" data-toggle="tab">Sunday</a></li>
+     </ul>
+     <div class="rj-tab-content">
+        <div class="tab-pane active" id="monday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+        <div class="tab-pane" id="tuesday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+        <div class="tab-pane" id="wednesday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+        <div class="tab-pane" id="thursday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+        <div class="tab-pane" id="friday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+        <div class="tab-pane" id="saturday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+        <div class="tab-pane" id="sunday">
+           <ul class="itemlist schedule"></ul>
+        </div>
+     </div>
+  </div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="//www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
+<script id="schedule_list_item" type="text/html">
+     <li class="item item-show item-small" data-id="<%= sch.utc_from %>" style="background-image: url(//www.radiojar.com<%= sch.show_photo %>?resize=cover_small)">
+        <div class="item-hostdjs">
+           <span></span>
+           <a href="<%= sch.dj_url %>" class="item-dj" title="<%= sch.dj_nickname %>">
+              <% if (sch.dj_photo.indexOf('image')!=-1) { %>
+              <div class="content">
+                 <img class="item-thumb" src="<%= sch.dj_photo %>" />
+              </div>
+              <% } %>
+           </a>
+        </div>
+        <div class="overlay">
+           <div class="content">
+              <div class="item-showinfo">
+               <a href="<%= sch.show_url %>">
+                  <h4 class="item-name"><%= sch.show_title %></h4>
+                  <h5 class="item-tagline"><%= sch.show_tagline %></h5>
+              </a>
+           </div>
+           <div class="item-schedule">
+              <i class="icon-time"></i>
+              <span class="localize-time" data-date='<%= sch.utc_from %>'></span> - <span class='localize-time' data-date='<%= sch.utc_to %>'></span>
+           </div>
+        </div>
+     </li>
+  </script>
+<script>
+ rjq('#rj-schedule').radiojar('schedule', {
+	streamName: "sdak4d2ptceuv"
+ });
+</script>
+</html>
