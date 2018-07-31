@@ -372,7 +372,7 @@ h6 {
 }
 
 p {
-    padding:.5rem;
+    padding:1rem;
 }
 
 .site-content {
@@ -380,7 +380,7 @@ p {
 }
 
 .container {
-    max-width:900px;
+    max-width:800px;
     margin: 0 auto;
     display:flex;
     flex-direction:column;
@@ -404,5 +404,43 @@ footer {
     z-index: 10;
     height: 3em;
     width:100%;
-    margin-top: -3em;
+    margin-top: -3rem;
+    padding-top:2rem;
+}
+
+.schedule-container {
+    margin:0 auto 2rem auto;
+    height:20rem;
+}
+
+.schedule__week {
+        text-align:center;
+    }
+
+.schedule__week-title {
+        padding:1rem;
+    }
+
+table {
+
+}
+
+/*th {*/
+
+/*    padding: 0 .8rem 0 .8rem;*/
+
+/*}*/
+
+td {
+    padding:.3rem;
+}
+
+/*main page widget*/
+
+.item-showinfo {
+    height:3rem;
+}
+
+#rjp-chat {
+    border: 1px solid black;
 }
